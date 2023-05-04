@@ -1,0 +1,76 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Vehiculos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Marca" formControlName="mark">
+            <mat-error *ngIf="addressForm.controls['mark'].hasError('required')">
+              Marca <strong>Requerida</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Color" formControlName="color">
+            <mat-error *ngIf="addressForm.controls['color'].hasError('required')">
+              Color <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="full-width">
+          <mat-select placeholder="ID Vehiculos" formControlName="idVehiculos">
+              <mat-option value="1">1</mat-option>
+              <mat-option value="2">2</mat-option>
+              <mat-option value="3">3</mat-option>
+          </mat-select>
+          <mat-error *ngIf="addressForm.controls['idVehiculos'].hasError('required')">
+              Nombre de la persona <strong>Requerida</strong>
+          </mat-error>
+      </mat-form-field>
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Modelo" formControlName="model"></textarea>
+            <mat-error *ngIf="addressForm.controls['model'].hasError('required')">
+              Modelo <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Placa" formControlName="placa"></textarea>
+            <mat-error *ngIf="addressForm.controls['placa'].hasError('required')">
+              Placa <strong>Requerida</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Repuestos" formControlName="repuestos"></textarea>
+            <mat-error *ngIf="addressForm.controls['repuestos'].hasError('required')">
+              Repuestos <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
